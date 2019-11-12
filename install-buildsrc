@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+##################################################################
+##
+##  download buildSrc template
+##
+##
+##  Author: Chaobin Wu
+##  Email : chaobinwu89@gmail.com
+##
+#################################################################
+die() {
+  echo "$*"
+  exit 1
+}
+curl -fsSO https://raw.githubusercontent.com/hacktons/tpl/master/bin/buildSrc.tar.gz
+if [ -f "buildSrc.tar.gz" ]; then
+  tar xfv buildSrc.tar.gz
+else
+  die "download template failed, check about network connection and try again"
+fi
